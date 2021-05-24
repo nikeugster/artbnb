@@ -10,7 +10,7 @@
 }
 
 .purple-square {
-  background-color: #3E2F5B;
+  background-color: $purple;
   height: 800px;
   width: 400px;
   position: absolute;
@@ -30,7 +30,7 @@
 }
 
 .green-circle {
-  background-color: #566246;
+  background-color: $olive;
   height: 80px;
   width: 80px;
   border-radius: 50%;
@@ -45,11 +45,11 @@
 }
 
 #header-header-text {
-  color: #3E2F5B
+  color: $purple
 }
 
 #subheader-text {
-  color: #3E2F5B
+  color: $purple
 }
 
 @media only screen and (max-width: 900px) {
