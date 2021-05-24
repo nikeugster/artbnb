@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :arts, dependent: :destroy
   has_many :bookings, dependent: :destroy
-  validates_presence_of :first_name, :last_name
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
