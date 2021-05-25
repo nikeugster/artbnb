@@ -1,7 +1,3 @@
 <% @arts.each do |art| %>
-  <ul>
-    <li>
-      <%= link_to art.title, art_path(art) %>
-    </li>
-  </ul>
+  <%= render partial: 'shared/card-product', locals: {art: art} %>
 <% end %>
