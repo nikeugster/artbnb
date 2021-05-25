@@ -1,1 +1,7 @@
-
+<% @arts.each do |art| %>
+  <ul>
+    <li>
+      <%= link_to art.title, art_path(art) %>
+    </li>
+  </ul>
+<% end %>
