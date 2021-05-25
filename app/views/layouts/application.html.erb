@@ -14,8 +14,10 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/header' %>
 
     <div class="container p-3">
+      <%= render 'shared/card-product' %>
       <%= yield %>
     </div>
   </body>
