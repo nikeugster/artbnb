@@ -1,0 +1,30 @@
+.btn-main {
+  color: $purple;
+  border: 2px solid $purple;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-main:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: $purple;
+}
+
+@media only screen and (max-width: 900px) {
+  .btn-main {
+    color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .btn-main {
+    color: rgba(255, 255, 255, 0.9);
+    &:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}
