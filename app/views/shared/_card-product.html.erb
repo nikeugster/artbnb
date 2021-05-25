@@ -1,5 +1,7 @@
-<div class="card-product mb-3 col-md-9 col-sm-12">
-  <%= image_tag art.picture, alt: art.title %>
+<div class="card-product mb-3 col-12">
+  <div class="img-container">
+    <%= image_tag art.picture, alt: art.title %>
+  </div>
   <div class="card-product-infos">
     <div>
       <h2><%= link_to art.title, art_path(art.id) %></h2>
