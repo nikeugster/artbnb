@@ -1,3 +1,4 @@
+<%= link_to "Create new art", new_art_path, class: "btn-main" %>
 <% @arts.each do |art| %>
   <%= render partial: 'shared/card-product', locals: {art: art} %>
 <% end %>
