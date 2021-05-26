@@ -45,11 +45,12 @@
 }
 
 #header-header-text {
-  color: $purple
+  font-weight: 700;
+  color: $purple;
 }
 
 #subheader-text {
-  color: $purple
+  color: $purple;
 }
 
 @media only screen and (max-width: 900px) {
@@ -57,18 +58,18 @@
     justify-content: flex-start;
   }
 
-  .header-text {
-    margin-right: 0px;
-    margin-left: 20px;
-  }
+  // .header-text {
+  //   margin-right: 0px;
+  //   margin-left: 20px;
+  // }
 
-  #header-header-text {
-    color: rgba(255, 255, 255, 0.9);
-  }
+  // #header-header-text {
+  //   color: rgba(255, 255, 255, 0.9);
+  // }
 
-  #subheader-text {
-    color: rgba(255, 255, 255, 0.9);
-  }
+  // #subheader-text {
+  //   color: rgba(255, 255, 255, 0.9);
+  // }
 }
 
 

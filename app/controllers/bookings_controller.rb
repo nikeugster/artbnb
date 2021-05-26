@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new()
+    @booking = Booking.new
     @art = Art.find(params[:art_id])
     @booking.user_id = current_user.id
     @booking.art = @art
@@ -14,11 +14,5 @@ class BookingsController < ApplicationController
     else
       render :new
     end
-  end
-
-  private
-
-  def booking_params
-    params.require(:booking).permit()
   end
 end
