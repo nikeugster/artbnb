@@ -2,7 +2,19 @@
 <%= link_to "Back to all arts", arts_path, class: "btn-main" %>
 
 <% unless @art.bookings.empty? == false || @art.user_id == current_user.id %>
-  <%= link_to "Book this art", new_art_booking_path(@art.id), class: "btn-main" %>
+  <%= link_to "Book this art", art_bookings_path(@art.id), method: :post, class: "btn-main" %>
+<% end %>
+
+<% unless @art.bookings.empty? %>
+  <%  booking = Booking.find_by(art: @art.id) %>
+  <% if @art.id == booking.art_id && current_user.id == booking.user_id %>
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Awesome!</h4>
+      <p>You've successfully made a booking inquiry for <strong><%= @art.title %></strong> by <em><%= @art.artist %></em>. Hopefully it will soon dress your walls. Our fingers are crossed! </p>
+      <hr>
+      <p class="mb-0">Please wait for the owner of <%= @art.title  %> to contanct you with further details.</p>
+    </div>
+  <% end %>
 <% end %>
 
 <%= render partial: 'shared/card-product', locals: {art: @art} %>
