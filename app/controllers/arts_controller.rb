@@ -6,6 +6,7 @@ class ArtsController < ApplicationController
   end
 
   def show
+    @disable_header = true
   end
 
   def new

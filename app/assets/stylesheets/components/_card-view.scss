@@ -1,0 +1,54 @@
+.card-view {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  position: relative;
+}
+
+.card-view img {
+  min-height: 500px;
+  max-width: 60vw;
+}
+
+.card-view-img {
+  padding: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 60vw;
+}
+
+.card-view-sticky {
+  position: sticky;
+  top: 24px;
+  width: 40vw;
+  height: 100%;
+  align-self: flex-start;
+}
+
+.card-view-checkout {
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 1px 1px 2px rgba(0,0,0, 0.4);
+  border-radius: 2px;
+  padding: 24px;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+.card-view-checkout h1 {
+  font-size: 28px;
+}
+
+.card-view-info {
+  position: relative;
+  margin-bottom: 16px;
+  background-color: none;
+  padding: 24px;
+  margin-left: 20px;
+  font-size: 14px;
+  color: $purple;
+}
+
+.card-view-description {
+  width: 50vw;
+}
