@@ -2,7 +2,7 @@
 <%= link_to "Back to all arts", arts_path, class: "btn-main" %>
 
 <% unless @art.bookings.empty? == false || @art.user_id == current_user.id %>
-  <%= link_to "Book this art", new_art_booking_path(@art.id), class "btn-main" %>
+  <%= link_to "Book this art", new_art_booking_path(@art.id), class: "btn-main" %>
 <% end %>
 
 <%= render partial: 'shared/card-product', locals: {art: @art} %>
