@@ -15,7 +15,7 @@
     <div class="card-view-checkout">
       <h1><%= @art.title %></h1>
       <p><em>By <%= @art.artist %></em></p>
-      <p><%= @art.description %></p>
+      <p><%= @art.description[0..50] %>...</p>
       <p><%= @art.price %>€ / day</p>
       <p>From <%= @art.user.first_name %> <%= @art.user.last_name %></p>
       <% unless @art.bookings.empty? == false || @art.user_id == current_user.id %>
@@ -30,10 +30,7 @@
     </div>
   </div>
   <div id="card-view-description">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Facilis alias eum quibusdam blanditiis odio, temporibus minus? Quam nisi harum iusto magni cumque. Asperiores sed animi quis fugiat odio laudantium non!</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Facilis alias eum quibusdam blanditiis odio, temporibus minus? Quam nisi harum iusto magni cumque. Asperiores sed animi quis fugiat odio laudantium non!</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Facilis alias eum quibusdam blanditiis odio, temporibus minus? Quam nisi harum iusto magni cumque. Asperiores sed animi quis fugiat odio laudantium non!</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Facilis alias eum quibusdam blanditiis odio, temporibus minus? Quam nisi harum iusto magni cumque. Asperiores sed animi quis fugiat odio laudantium non!</p>
+    <%= @art.description %>
   </div>
 </div>
 
