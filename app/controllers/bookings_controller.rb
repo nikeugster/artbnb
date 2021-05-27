@@ -19,7 +19,11 @@ class BookingsController < ApplicationController
   def accept
     @booking = Booking.find(params[:id])
     @booking.accepted = true
-    redirect_to dashboard_path, notice: "Booking accepted!"
+    if @booking.save
+      redirect_to dashboard_path, notice: "Booking accepted!"
+    else
+      render :dashboard
+    end
   end
 
   def destroy

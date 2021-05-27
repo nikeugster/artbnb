@@ -1,0 +1,80 @@
+.card-dashboard {
+  padding: 0;
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 1px 1px 2px rgba(0,0,0, 0.4);
+  border-radius: 2px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card-dashboard img {
+  margin: 0;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.dashboard-img-container {
+  width: 200px;
+}
+
+.card-dashboard-infos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-dashboard h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-dashboard p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-dashboard .card-dashboard-infos {
+  padding: 16px;
+}
+
+.card-dashboard-align-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 500px;
+  margin-left: 16px;
+  overflow: scroll;
+  height: 200px;
+}
+
+.card-dashboard-open-bookings {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 6px;
+}
+
+.card-dashboard-booking-details-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.card-dashboard-booking-accepted {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 6px;
+  > p {
+    color: $green;
+  }
+}
+

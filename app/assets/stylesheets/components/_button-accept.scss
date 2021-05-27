@@ -1,6 +1,6 @@
-.btn-decline {
-  color: $red;
-  border: 2px solid $red;
+.btn-accept {
+  color: $green;
+  border: 2px solid $green;
   padding: 2px 6px;
   border-radius: 50px;
   font-weight: lighter;
@@ -9,8 +9,8 @@
   text-decoration: none;
 }
 
-.btn-decline:hover {
+.btn-accept:hover {
   opacity: 1;
   text-decoration: none;
-  color: $red;
+  color: $green;
 }
