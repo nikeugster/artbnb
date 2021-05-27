@@ -1,7 +1,7 @@
 .card-dashboard {
   padding: 0;
   overflow: hidden;
-  height: 200px;
+  height: 150px;
   background: white;
   box-shadow: 1px 1px 2px rgba(0,0,0, 0.4);
   border-radius: 2px;
@@ -11,7 +11,7 @@
 
 .card-dashboard img {
   margin: 0;
-  height: 200px;
+  height: 150px;
   width: 100%;
   object-fit: cover;
 }
@@ -50,8 +50,12 @@
   align-items: flex-start;
   width: 500px;
   margin-left: 16px;
+}
+
+.card-dashboard-bookings {
+  width: 100%;
   overflow: scroll;
-  height: 200px;
+  height: 140px;
 }
 
 .card-dashboard-infos-align-left {
@@ -81,5 +85,9 @@
 
 .success-text {
     color: $green;
+}
+
+.pending-text {
+  color: $yellow;
 }
 
