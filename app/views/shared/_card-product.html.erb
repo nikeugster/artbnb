@@ -6,7 +6,7 @@
     <div>
       <h2><%= link_to art.title, art_path(art.id) %></h2>
       <p><em> <%= art.artist %></em></p>
-      <p><%= art.description %></p>
+      <p class="art-description"><%= art.description %></p>
     </div>
     <div class="card-product-align-right">
       <h2 class="card-product-pricing"><%= art.price %>€ / day</h2>
