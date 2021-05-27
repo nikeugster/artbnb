@@ -4,8 +4,9 @@
   <% if  @art.user_id == current_user.id%>
     <%= link_to "Edit this listing", edit_art_path(@art.id), class: "btn-main" %>
   <% end %>
-
 </div>
+
+<% raise %>
 
 <div class="card-view">
   <div class="card-view-img">
