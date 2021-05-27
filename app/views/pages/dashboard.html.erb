@@ -10,18 +10,18 @@
           <%= image_tag art.picture, alt: art.title %>
         </div>
         <div class="card-dashboard-infos">
-          <div>
+          <div class="card-dashboard-infos-align-left">
             <h2><%= link_to art.title, art_path(art.id) %></h2>
             <h2><%= art.price %>€ / day</h2>
             <p><em> <%= art.artist %></em></p>
-            <p><%= art.description %></p>
+            <p class="art-description"><%= art.description %></p>
           </div>
           <div class="card-dashboard-align-right">
             <h2>Pending booking requests:</h2>
             <% current_user.bookings_as_owner.each do |booking| %>
               <% if booking.accepted && booking.art_id == art.id %>
                 <div class="card-dashboard-booking-accepted">
-                  <p><i class="fas fa-check"></i> Booking accepted!</p>
+                  <p class="success-text"><i class="fas fa-check"></i> Booking accepted!</p>
                 </div>
               <% elsif booking.art_id == art.id %>
                 <div class="card-dashboard-open-bookings">
@@ -34,14 +34,36 @@
                     <%= link_to "Accept", booking_accept_path(booking), class: "btn-accept" %>
                   </div>
                 </div>
-              <% else %>
-                <p>Nothing here yet...</p>
               <% end %>
             <% end %>
           </div>
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="dashboard-bookings-collection">
+    <h3>Your bookings:</h3>
+      <% bookings = Booking.where("user_id = #{current_user.id}") %>
+      <% bookings.each do |booking| %>
+        <div class="card-dashboard mb-3 col-12">
+          <div class="dashboard-img-container">
+            <%= image_tag booking.art.picture, alt: booking.art.title %>
+          </div>
+          <div class="card-dashboard-infos">
+            <div class="card-dashboard-infos-align-left">
+              <h2><%= link_to booking.art.title, art_path(booking.art.id) %></h2>
+              <h2><%= booking.art.price %>€ / day</h2>
+              <p><em> <%= booking.art.artist %></em></p>
+              <p class="art-description"><%= booking.art.description %></p>
+            </div>
+            <div class="card-dashboard-align-right">
+              <% if booking.accepted %>
+                <p class="success-text">Congratulations, the owner accepted your request!</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>
 

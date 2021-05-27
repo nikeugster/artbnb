@@ -54,6 +54,10 @@
   height: 200px;
 }
 
+.card-dashboard-infos-align-left {
+  width: 400px;
+}
+
 .card-dashboard-open-bookings {
   width: 100%;
   display: flex;
@@ -73,8 +77,9 @@
   justify-content: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 6px;
-  > p {
+}
+
+.success-text {
     color: $green;
-  }
 }
 
