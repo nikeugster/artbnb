@@ -15,4 +15,23 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.accepted = true
+    if @booking.save
+      redirect_to dashboard_path, notice: "Booking accepted!"
+    else
+      render :dashboard
+    end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.destroy
+      redirect_to dashboard_path, notice: "Booking declined."
+    else
+      render :dashboard
+    end
+  end
 end
