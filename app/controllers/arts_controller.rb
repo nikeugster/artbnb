@@ -3,7 +3,12 @@ class ArtsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @arts = Art.all
+    @query = params[:query]
+    if params[:query].present?
+      @arts = Art.search(@query.to_s)
+    else
+      @arts = Art.all
+    end
   end
 
   def show
