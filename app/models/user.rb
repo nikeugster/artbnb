@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :arts, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :bookings_as_owner, through: :arts, source: :bookings
 end
