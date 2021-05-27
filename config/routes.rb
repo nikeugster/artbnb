@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:destroy]
 
+  get 'bookings/:id', to: 'bookings#accept'
+  patch 'bookings/:id', to: 'bookings#accept', as: :booking_accept
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
 end

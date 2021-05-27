@@ -16,6 +16,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.accepted = true
+    redirect_to dashboard_path, notice: "Booking accepted!"
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     if @booking.destroy

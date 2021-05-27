@@ -19,7 +19,8 @@
             <h2 class="card-product-pricing"><%= art.price %>€ / day</h2>
             <% current_user.bookings_as_owner.each do |booking| %>
                <% if booking.art_id == art.id %>
-                  <%= link_to "Decline", booking_path(booking), method: :delete %>
+                  <%= link_to "Decline", booking_path(booking), method: :delete, class: "btn-decline" %>
+                  <%= link_to "Accept", booking_accept_path(booking), class: "btn-accept" %>
                <% end %>
             <% end %>
           </div>
