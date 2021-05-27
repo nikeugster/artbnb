@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_105402) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "start_date"
     t.string "end_date"
+    t.boolean "accepted", default: false
     t.index ["art_id"], name: "index_bookings_on_art_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
