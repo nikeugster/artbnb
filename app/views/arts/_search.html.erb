@@ -1,0 +1,11 @@
+<div class="form-main">
+  <%= form_tag arts_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-group",
+      placeholder: "Find an artwork",
+      autocomplete: "off"
+    %>
+    <%= submit_tag "Search", class: "btn-main" %>
+  <% end %>
+</div>
