@@ -29,7 +29,7 @@
                       <p class="success-text"><i class="fas fa-check"></i> Booking accepted! Art will be at <%= booking.user.first_name %> <%= booking.user.last_name %>'s place from <%= booking.start_date %> to <%= booking.end_date %>.</p>
                     </div>
                     <div class="card-dashboard-booking-details-buttons">
-                      <%= link_to "Cancel booking", booking_path(booking), method: :delete, class: "btn-cancel" %>
+                      <%= link_to "Cancel booking", booking_path(booking), method: :delete, class: "btn-cancelbooking" %>
                     </div>
                   </div>
                 <% elsif booking.art_id == art.id %>

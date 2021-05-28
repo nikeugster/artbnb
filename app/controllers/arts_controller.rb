@@ -14,6 +14,10 @@ class ArtsController < ApplicationController
   def show
     @disable_header = true
     @booking = Booking.new
+    respond_to do |format|
+      format.html
+      format.json { render json: { arts: @arts } }
+    end
   end
 
   def new

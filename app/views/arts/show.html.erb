@@ -17,11 +17,16 @@
       <p><%= @art.description %></p>
       <p><%= @art.price %>€ / day</p>
       <p>From <%= @art.user.first_name %> <%= @art.user.last_name %></p>
-      <div id='art-booking-dates' data-unavailable="<%= @art.unavailable_dates.to_json %>">
+      <div id='art-booking-dates'>
         <% if current_user.id != @art.user_id  %>
           <%= simple_form_for([@art, @booking]) do |f| %>
              <%= f.input :start_date, as: :string, type: :text %>
              <%= f.input :end_date, as: :string, type: :text %>
+             <div id="price">
+               <% unless @booking.end_date.nil? %>
+                 <p data-counter-target="amount"><strong>Total price: <%= @art.price %>€</strong></p>
+               <% end %>
+             </div>
              <%= f.submit "Book this art", class: "btn-main" %>
           <% end %>
         <% end %>
