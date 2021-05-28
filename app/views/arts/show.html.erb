@@ -26,11 +26,6 @@
           <%= simple_form_for([@art, @booking]) do |f| %>
              <%= f.input :start_date, as: :string, type: :text %>
              <%= f.input :end_date, as: :string, type: :text %>
-             <div id="price">
-               <% unless @booking.end_date.nil? %>
-                 <p><strong>Total price: <%= @art.price %>€</strong></p>
-               <% end %>
-             </div>
              <%= f.submit "Book this art", class: "btn-main" %>
           <% end %>
         <% end %>
