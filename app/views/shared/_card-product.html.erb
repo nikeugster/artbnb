@@ -1,16 +1,20 @@
-<div class="card-product mb-3 col-12">
-  <div class="img-container">
-    <%= image_tag art.picture, alt: art.title %>
-  </div>
-  <div class="card-product-infos">
-    <div>
-      <h2><%= link_to art.title, art_path(art.id) %></h2>
-      <p><em> <%= art.artist %></em></p>
-      <p class="art-description"><%= art.description %></p>
+<div class="card-whole-link">
+  <%= link_to art_path(art.id) do %>
+    <div class="card-product mb-3 col-12">
+      <div class="img-container">
+        <%= image_tag art.picture, alt: art.title %>
+      </div>
+      <div class="card-product-infos">
+        <div>
+          <h2><%= art.title %></h2>
+          <p><em> <%= art.artist %></em></p>
+          <p class="art-description"><%= art.description %></p>
+        </div>
+        <div class="card-product-align-right">
+          <h2 class="card-product-pricing" id="price"><%= art.price %>€ / day</h2>
+          <p><%= art.user.first_name %> <%= art.user.last_name %></p>
+        </div>
+      </div>
     </div>
-    <div class="card-product-align-right">
-      <h2 class="card-product-pricing"><%= art.price %>€ / day</h2>
-      <p><%= art.user.first_name %> <%= art.user.last_name %></p>
-    </div>
-  </div>
+  <% end %>
 </div>
