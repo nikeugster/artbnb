@@ -2,8 +2,8 @@ class Art < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
 
-  validates :artist, :description, :price, :picture, :title, presence: true
-  has_one_attached :picture
+  validates :artist, :description, :price, :title, presence: true
+  has_one_attached :photo
 
   def unavailable_dates
     bookings.pluck(:start_date, :end_date).map do |range|
