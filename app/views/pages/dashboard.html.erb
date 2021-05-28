@@ -28,7 +28,7 @@
                 <% if booking.accepted && booking.art_id == art.id %>
                   <div class="card-dashboard-booking-accepted">
                     <div class="card-dashboard-booking-details-text">
-                      <p class="success-text"><i class="fas fa-check"></i> Booking accepted! Art will be at <%= booking.user.first_name %> <%= booking.user.last_name %>'s place from <%= booking.start_date %> to <%= booking.end_date %>.</p>
+                      <p class="success-text"><i class="fas fa-check"></i> Booking accepted! Art will be at <%= booking.user.first_name %> <%= booking.user.last_name %>'s place from <%= booking.start_date.unpack('A4xA2xA2').rotate.join('.') %> to <%= booking.end_date.unpack('A4xA2xA2').rotate.join('.') %>.</p>
                     </div>
                     <div class="card-dashboard-booking-details-buttons">
                       <%= link_to "Cancel booking", booking_path(booking), method: :delete, class: "btn-cancelbooking" %>
@@ -38,7 +38,7 @@
                   <div class="card-dashboard-open-bookings">
                     <div class="card-dashboard-booking-details-text">
                       <p><%= booking.user.first_name %><%= booking.user.last_name %> wants to rent <%= art.title %></p>
-                      <p>from: <%= booking.start_date %> to: <%= booking.end_date %></p>
+                      <p>from: <%= booking.start_date.unpack('A4xA2xA2').rotate.join('.') %> to: <%= booking.end_date.unpack('A4xA2xA2').rotate.join('.') %></p>
                     </div>
                     <div class="card-dashboard-booking-details-buttons">
                       <%= link_to "Decline", booking_path(booking), method: :delete, class: "btn-decline" %>
@@ -76,7 +76,7 @@
               <% if booking.accepted %>
                 <p class="success-text"><i class="fas fa-check"></i> Congratulations, the owner accepted your request! You can enjoy '<%= booking.art.title %>' from <%= booking.start_date %> to <%= booking.end_date %>.</p>
               <% else %>
-                <p class="pending-text"><i class="fas fa-question-circle"> </i> The owner is still reviewing your request for '<%= booking.art.title %>' from <%= booking.start_date %> to <%= booking.end_date %>.</p>
+                <p class="pending-text"><i class="fas fa-question-circle"> </i> The owner is still reviewing your request for '<%= booking.art.title %>' from <%= booking.start_date.unpack('A4xA2xA2').rotate.join('.') %> to <%= booking.end_date.unpack('A4xA2xA2').rotate.join('.') %>.</p>
               <% end %>
             </div>
           </div>
