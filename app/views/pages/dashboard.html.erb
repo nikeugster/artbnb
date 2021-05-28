@@ -6,7 +6,7 @@
     <% arts.each do |art| %>
       <div class="card-dashboard mb-3 col-12">
         <div class="dashboard-img-container">
-          <%= image_tag art.picture, alt: art.title %>
+          <%= cl_image_tag art.photo.key, width: 200, crop: :fill %>
         </div>
         <div class="card-dashboard-infos">
           <div class="card-dashboard-infos-align-left">
@@ -48,7 +48,7 @@
       <% bookings.each do |booking| %>
         <div class="card-dashboard mb-3 col-12">
           <div class="dashboard-img-container">
-            <%= image_tag booking.art.picture, alt: booking.art.title %>
+            <%= cl_image_tag booking.art.photo.key, width: 200, crop: :fill %>
           </div>
           <div class="card-dashboard-infos">
             <div class="card-dashboard-infos-align-left">
