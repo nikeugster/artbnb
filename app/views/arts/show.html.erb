@@ -8,8 +8,7 @@
 
 <div class="card-view">
   <div class="card-view-img">
-    <!--<%= image_tag @art.picture, alt: @art.title %>-->
-    <%= cl_image_tag @art.picture.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @art.photo.key, width: 500, crop: :fill %>
   </div>
   <div class="card-view-sticky">
     <div class="card-view-checkout">
