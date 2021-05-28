@@ -4,12 +4,12 @@
   <% if  @art.user_id == current_user.id%>
     <%= link_to "Edit this listing", edit_art_path(@art.id), class: "btn-main" %>
   <% end %>
-
 </div>
 
 <div class="card-view">
   <div class="card-view-img">
-    <%= image_tag @art.picture, alt: @art.title %>
+    <!--<%= image_tag @art.picture, alt: @art.title %>-->
+    <%= cl_image_tag @art.picture.key, height: 300, width: 400, crop: :fill %>
   </div>
   <div class="card-view-sticky">
     <div class="card-view-checkout">
@@ -18,9 +18,15 @@
       <p><%= @art.description %></p>
       <p><%= @art.price %>€ / day</p>
       <p>From <%= @art.user.first_name %> <%= @art.user.last_name %></p>
-      <% unless @art.bookings.empty? == false || @art.user_id == current_user.id %>
-        <%= link_to "Book this art", art_bookings_path(@art.id), method: :post, class: "btn-main" %>
-      <% end %>
+      <div id='art-booking-dates' data-unavailable="<%= @art.unavailable_dates.to_json %>">
+        <% if current_user.id != @art.user_id  %>
+          <%= simple_form_for([@art, @booking]) do |f| %>
+             <%= f.input :start_date, as: :string, type: :text %>
+             <%= f.input :end_date, as: :string, type: :text %>
+             <%= f.submit "Book this art", class: "btn-main" %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="more-info-wrapper">
       <div class="card-view-info">
@@ -38,15 +44,3 @@
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Facilis alias eum quibusdam blanditiis odio, temporibus minus? Quam nisi harum iusto magni cumque. Asperiores sed animi quis fugiat odio laudantium non!</p>
   </div>
 </div>
-
-<% unless @art.bookings.empty? %>
-  <%  booking = Booking.find_by(art: @art.id) %>
-  <% if @art.id == booking.art_id && current_user.id == booking.user_id %>
-    <div class="alert alert-success" role="alert">
-      <h4 class="alert-heading">Awesome!</h4>
-      <p>You've successfully made a booking inquiry for <strong><%= @art.title %></strong> by <em><%= @art.artist %></em>. Hopefully it will soon dress your walls. Our fingers are crossed! </p>
-      <hr>
-      <p class="mb-0">Please wait for the owner of <%= @art.title  %> to contanct you with further details.</p>
-    </div>
-  <% end %>
-<% end %>

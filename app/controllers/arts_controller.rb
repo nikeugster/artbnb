@@ -13,6 +13,7 @@ class ArtsController < ApplicationController
 
   def show
     @disable_header = true
+    @booking = Booking.new
   end
 
   def new
