@@ -1,3 +1,7 @@
+h2 {
+  color: $purple;
+}
+
 .card-view {
   display: flex;
   flex-wrap: wrap;
@@ -7,6 +11,13 @@
 .card-view>* {
   margin: 0 10px;
   flex: 1 1 200px;
+}
+
+.card-view-img {
+  min-width: 50vw;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
 }
 
 .card-view img {
@@ -23,7 +34,7 @@
 
 .card-view-sticky {
   position: sticky;
-  top: 123px;
+  top: 0px;
   right: 24px;
   width: 30vw;
   height: 100%;

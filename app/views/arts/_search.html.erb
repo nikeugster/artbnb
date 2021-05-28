@@ -2,7 +2,7 @@
   <%= form_tag arts_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-group",
+      class: "form-search",
       placeholder: "Find an artwork",
       autocomplete: "off"
     %>
