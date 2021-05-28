@@ -1,8 +1,10 @@
 <div class="show-page-buttons mt-4">
   <%= link_to "Back to all arts", arts_path, class: "btn-main" %>
   <%= link_to "Create a listing", new_art_path, class: "btn-main" %>
-  <% if  @art.user_id == current_user.id %>
-    <%= link_to "Edit this listing", edit_art_path(@art.id), class: "btn-main" %>
+  <% unless current_user.nil? %>
+    <% if  @art.user_id == current_user.id %>
+      <%= link_to "Edit this listing", edit_art_path(@art.id), class: "btn-main" %>
+    <% end %>
   <% end %>
 </div>
 
@@ -16,14 +18,17 @@
       <p><em>By <%= @art.artist %></em></p>
       <p><%= @art.price %>€ / day</p>
       <p>From <%= @art.user.first_name %> <%= @art.user.last_name %></p>
-      <div id='art-booking-dates'>
+      <div id='art-booking-dates' data-unavailable="<%= @art.unavailable_dates.to_json %>">
+      <% if current_user.nil? %>
+          <p class="pending-text">Please log in to make a booking request.</p>
+        <% end %>
         <% if current_user.id != @art.user_id  %>
           <%= simple_form_for([@art, @booking]) do |f| %>
              <%= f.input :start_date, as: :string, type: :text %>
              <%= f.input :end_date, as: :string, type: :text %>
              <div id="price">
                <% unless @booking.end_date.nil? %>
-                 <p data-counter-target="amount"><strong>Total price: <%= @art.price %>€</strong></p>
+                 <p><strong>Total price: <%= @art.price %>€</strong></p>
                <% end %>
              </div>
              <%= f.submit "Book this art", class: "btn-main" %>
