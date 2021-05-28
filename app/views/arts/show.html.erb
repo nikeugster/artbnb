@@ -7,14 +7,13 @@
 </div>
 
 <div class="card-view">
-  <div class="card-view-img">
+  <div class="card-view-img col-6">
     <%= cl_image_tag @art.photo.key, width: 500, crop: :fill %>
   </div>
   <div class="card-view-sticky">
     <div class="card-view-checkout">
       <h1><%= @art.title %></h1>
       <p><em>By <%= @art.artist %></em></p>
-      <p><%= @art.description %></p>
       <p><%= @art.price %>€ / day</p>
       <p>From <%= @art.user.first_name %> <%= @art.user.last_name %></p>
       <div id='art-booking-dates' data-unavailable="<%= @art.unavailable_dates.to_json %>">
@@ -27,7 +26,7 @@
         <% end %>
       </div>
     </div>
-    <div class="more-info-wrapper">
+    <div class="more-info-wrapper col-6">
       <div class="card-view-info">
         <p><strong>Premium Shipping available:</strong> This item qualifies for international premium shipping.</p>
         <p><strong>Authenticity guaranteed:</strong> We guarantee the authenticity of this item.</p>
@@ -37,9 +36,6 @@
   <div id="card-view-description">
     <h4>About '<%= @art.title %>'</h4>
     <br>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Facilis alias eum quibusdam blanditiis odio, temporibus minus? Quam nisi harum iusto magni cumque. Asperiores sed animi quis fugiat odio laudantium non!</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Facilis alias eum quibusdam blanditiis odio, temporibus minus? Quam nisi harum iusto magni cumque. Asperiores sed animi quis fugiat odio laudantium non!</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Facilis alias eum quibusdam blanditiis odio, temporibus minus? Quam nisi harum iusto magni cumque. Asperiores sed animi quis fugiat odio laudantium non!</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Facilis alias eum quibusdam blanditiis odio, temporibus minus? Quam nisi harum iusto magni cumque. Asperiores sed animi quis fugiat odio laudantium non!</p>
+    <p><%= @art.description %></p>
   </div>
 </div>
