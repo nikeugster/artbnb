@@ -9,6 +9,13 @@
   flex: 1 1 200px;
 }
 
+.card-view-img {
+  min-width: 50vw;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+}
+
 .card-view img {
   min-height: 500px;
   max-width: 50vw;
