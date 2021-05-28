@@ -16,12 +16,21 @@
             <p class="art-description"><%= art.description %></p>
           </div>
           <div class="card-dashboard-align-right">
-            <h2>Pending booking requests:</h2>
+            <% if current_user.bookings_as_owner.count.positive? %>
+              <h2>Pending booking requests:</h2>
+            <% else %>
+              <h2> No pending bookings.</h2>
+            <% end %>
             <div class="card-dashboard-bookings">
               <% current_user.bookings_as_owner.each do |booking| %>
                 <% if booking.accepted && booking.art_id == art.id %>
                   <div class="card-dashboard-booking-accepted">
-                    <p class="success-text"><i class="fas fa-check"></i> Booking accepted! Art will be at <%= booking.user.first_name %> <%= booking.user.last_name %>'s place from <%= booking.start_date %> to <%= booking.end_date %>.</p>
+                    <div class="card-dashboard-booking-details-text">
+                      <p class="success-text"><i class="fas fa-check"></i> Booking accepted! Art will be at <%= booking.user.first_name %> <%= booking.user.last_name %>'s place from <%= booking.start_date %> to <%= booking.end_date %>.</p>
+                    </div>
+                    <div class="card-dashboard-booking-details-buttons">
+                      <%= link_to "Cancel booking", booking_path(booking), method: :delete, class: "btn-cancel" %>
+                    </div>
                   </div>
                 <% elsif booking.art_id == art.id %>
                   <div class="card-dashboard-open-bookings">
