@@ -30,7 +30,7 @@ images = [
 ]
 
 puts "Cleaning db..."
-Art.destroy_all
+Art.delete_all
 
 4.times do
   user = User.new(
