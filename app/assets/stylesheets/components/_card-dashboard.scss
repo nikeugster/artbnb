@@ -1,7 +1,7 @@
 .card-dashboard {
   padding: 0;
   overflow: hidden;
-  height: 150px;
+  height: 200px;
   background: white;
   box-shadow: 1px 1px 2px rgba(0,0,0, 0.4);
   border-radius: 2px;
@@ -11,8 +11,8 @@
 
 .card-dashboard img {
   margin: 0;
-  height: 150px;
-  width: 100%;
+  height: 200px;
+  width: 200px;
   object-fit: cover;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .card-dashboard-infos {
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
 }
@@ -48,7 +48,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 500px;
+  width: 300px;
   margin-left: 16px;
 }
 
@@ -59,11 +59,11 @@
 }
 
 .card-dashboard-infos-align-left {
-  width: 400px;
+  width: 250px;
 }
 
 .card-dashboard-open-bookings {
-  width: 100%;
+  width: 250px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -71,7 +71,7 @@
 }
 
 .card-dashboard-booking-details-text {
-  width: 70%;
+  width: 250px;
 }
 
 .card-dashboard-booking-details-buttons {
