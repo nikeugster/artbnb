@@ -10,10 +10,9 @@ require 'open-uri'
 
 puts "Cleaning db..."
 
+Booking.delete_all
 Art.delete_all
 User.delete_all
-Booking.delete_all
-
 
 juergen = User.new(
   email: "jürgen@dose.de",
